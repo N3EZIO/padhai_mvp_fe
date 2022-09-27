@@ -80,7 +80,7 @@ const CardModal = ({ data, isFlipped, handleClick, handleCardFlip, selectedOptio
 
             {/* To change the style according to the option selected */}
             {/* {console.log(`Option ${data_body["Correct Option"]}`)} */}
-          { loading === true ? <div> </div>: (<FlippedCard data={data} data_body={data_body} handleCardFlip={handleCardFlip} handleClick = {handleClick} selectedOptionId = {selectedOptionId} loading = {loading}/>)}
+          (<FlippedCard data={data} data_body={data_body} handleCardFlip={handleCardFlip} handleClick = {handleClick} selectedOptionId = {selectedOptionId} loading = {loading}/>)
         </ReactCardFlip>
     )
 }
