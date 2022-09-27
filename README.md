@@ -6,6 +6,6 @@ A Simple Question / Answer site with AI optimization, hosted on Netlify (Fronten
 ## Setup
 Run ``` npm start ``` in the given repository
 
-## Site Link
+<!-- ## Site Link
 
->[Padh.ai](https://padhai.netlify.app)
+>[Padh.ai](https://padhai.netlify.app) -->
