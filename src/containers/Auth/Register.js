@@ -1,6 +1,5 @@
 import React from 'react'
 
-import NavbarHome from '../../components/Navbar/Navbar'
 
 const Register = () => {
   return (
