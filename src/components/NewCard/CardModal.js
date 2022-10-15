@@ -18,6 +18,7 @@ const CardModal = ({
 }) => {
   const data_body = data.question;
   return (
+    <div className="card-comp">
     <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
       <div className="card text-dark bg-light mb-3">
         <div className="card-modal-front">
@@ -108,6 +109,7 @@ const CardModal = ({
         />
       )}
     </ReactCardFlip>
+  </div>
   );
 };
 

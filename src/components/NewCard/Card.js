@@ -9,22 +9,23 @@ import CardModal from "./CardModal";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const Card = () => {
-  const mapQ = {
-    p: 131,
-    c: 148,
-    m: 51,
-  };
+  // const mapQ = {
+  //   p: 131,
+  //   c: 148,
+  //   m: 51,
+  // };
   const [isFlipped, setIsFlipped] = useState(false);
   const [selectedOptionId, setSelectedOptionId] = useState(0);
   const [next_qid, setNextqid] = useState(0);
   const subjArr = ["p", "c", "m"];
   const [subj, setSubj] = useState(
-    subjArr[Math.floor(Math.random() * subjArr.length)]
+    'm'
   );
+  //
   const [qid, setQid] = useState(Math.floor(Math.random() * (50 - 1 + 1)) + 1);
   const [Data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
-
+  console.log(subj, qid);
   // const baseUrl = process.env.REACT_APP_BASE_URL;
   const baseUrl = "http://localhost:8000";
   const {
@@ -39,16 +40,15 @@ const Card = () => {
   const header = {
     "Content-Type": "application/json",
     "Access-Control-Allow-Origin": "*",
-    Authorization: sessionStorage.getItem("jwt"),
   };
 
-  const fetchData = async (q_id) => {
+  const fetchData = async (q_id, subject) => {
     const subj = subjArr[Math.floor(Math.random() * subjArr.length)];
     // console.log('hell1')
 
     try {
       const { data } = await axios.get(
-        "http://localhost:8000/question/" + subj + "/" + q_id,
+        "http://localhost:8000/question/" + subject + "/" + q_id,
         {
           headers: header,
         }
@@ -63,7 +63,7 @@ const Card = () => {
   };
 
   useEffect(() => {
-    fetchData(qid);
+    fetchData(qid, subj);
   }, [qid]);
 
   const handleChange = (e, subjectNum) => {
@@ -100,6 +100,7 @@ const Card = () => {
       setSubj(resp.data.subject);
       setQid(resp.data.next_question + 1);
       console.log(qid);
+      console.log(subj);
       setLoading(!loading);
 
       // setNextqid(qid);

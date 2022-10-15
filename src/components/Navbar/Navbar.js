@@ -23,7 +23,7 @@ const NavbarHome = () => {
         <Navbar.Brand href="/">Padh.ai</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+          {/* <Nav className="me-auto">
             <Nav.Link href="aboutus">About Us</Nav.Link>
             <Nav.Link href="vision">Our Vision</Nav.Link>
             <NavDropdown title="More ..." id="basic-nav-dropdown">
@@ -35,7 +35,7 @@ const NavbarHome = () => {
               <NavDropdown.Divider />
               <NavDropdown.Item href="contactus">Contact Us</NavDropdown.Item>
             </NavDropdown>
-          </Nav>
+          </Nav> */}
           {!isAuthenticated ? (
             <Button variant="outline-success" onClick={() => loginWithPopup()}>
               Login
