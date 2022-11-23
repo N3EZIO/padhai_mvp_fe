@@ -1,10 +1,11 @@
 import React from "react";
 
 import Navbar from "../../components/Navbar/Navbar";
+
 import Card from "../../components/NewCard/Card";
 // check if user is authenticated else redirect to login
 import { Auth0Provider } from "@auth0/auth0-react";
-import {useAuth0} from "@auth0/auth0-react";
+import { useAuth0 } from "@auth0/auth0-react";
 const Home = () => {
   const { isAuthenticated, isLoading } = useAuth0();
   return (
@@ -17,6 +18,7 @@ const Home = () => {
         scope="openid profile email"
       >
         <Navbar />
+
         <Card />
       </Auth0Provider>
     </>
